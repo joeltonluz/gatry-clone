@@ -327,3 +327,43 @@ footer {
 .links_footer a:hover {
   color: rgb(7, 91, 175);
 }
+
+/*=====not-found=====*/
+.not-found {
+  display: flex;
+  flex-direction: column;
+  margin: 24px auto 0;
+  width: 940px;
+  
+
+}
+
+.not-found a {
+  align-self: center;
+
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Roboto';
+  
+  border: 1px solid #ccc;
+  background-color: var(--color-logo);
+  color: white;
+
+  margin-bottom: 8px;
+  padding: 8px  36px;
+  border-radius: 8px;
+}
+
+.not-found a:hover{
+  transition: 0.5;
+  background-color: rgb(192, 25, 78);
+}
+
+.not-found-img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.not-found-img img {
+  width: 100%;
+}
