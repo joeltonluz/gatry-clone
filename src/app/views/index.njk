@@ -1,0 +1,30 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <main>
+    <div class="search">
+      <form action="">
+        <input type="text" name="" placeholder="Pesquisar em Promoções...">
+        <button type="submit"><i class="material-icons">search</i></button>
+      </form>
+      <button type="button">Criar Alerta</button>
+    </div>
+    {% for promo in promocoes %}
+      <section class="promotions">
+        <div class="promotion_image">
+          <img src="{{promo.product_image}}" alt="" srcset="">        
+        </div>
+        <div class="promotion_content">
+          <div class="promo_title">{{promo.product_title}} - {{promo.product_id}}</div>
+          <div class="promo_price">R$ {{promo.product_price}}</div>
+          <div class="promo_firstcomment">"Primeiro Comentário"</div>
+          <div class="promotion_footer">
+            <div class="promo_commnents item_footer">0 Comentários</div>
+            <div class="promo_store item_footer"><a href={{promo.product_url}} target="_blank"> Ir para {{promo.product_store}}</a></div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+    </section>
+  </main>
+{% endblock %}

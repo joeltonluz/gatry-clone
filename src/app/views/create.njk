@@ -1,0 +1,62 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<form action="/adicionar" method="POST">
+  <section class="promotions new-promotion">
+    <div class="title-promotion">
+      Enviar Promoção
+    </div>
+    
+    <div class="item">
+      <div>Nome do Produto</div>
+      <div><input type="text" name="product_title" placeholder="" required/></div>
+    </div>
+
+    <div class="item">
+      <div>Nome da Loja</div>
+      <div><input type="text" name="product_store" placeholder="Magazine Luiza, Fastshop..." required/></div>
+    </div>
+
+    <div class="item">
+      <div>URL do Produto</div>
+      <div><input type="url" name="product_url" placeholder="http://" required/></div>
+    </div>
+
+    <div class="item">
+      <div>URL da Imagem do Produto</div>
+      <div><input type="url" name="product_image" placeholder="http://" required/></div>
+    </div>
+
+    <div class="item">
+      <div>Preço</div>
+      <div><input type="tel" class="product_price" name="product_price" placeholder="Somente números..." onkeyup="formatarMoeda();" required/></div>
+    </div>
+
+    <button type="submit">Enviar Promoção</button>
+
+  </section>
+</form>
+
+<script>
+  function formatarMoeda() {
+  var elemento = document.querySelector('.product_price');
+  var valor = elemento.value;
+  
+  valor = valor + '';
+  valor = parseInt(valor.replace(/[\D]+/g,''));
+  valor = valor + '';
+  valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+  if (valor.length > 6) {
+    valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+  }
+
+  if (valor=='NaN') {
+    valor = "";
+  };
+  elemento.value = valor;
+};
+</script>
+
+{% endblock %}
