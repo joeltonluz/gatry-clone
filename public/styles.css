@@ -56,10 +56,11 @@ header .logo a {
 
   text-decoration: none;
   color: var(--color-logo);
+
+  transition: 0.5s;
 }
 
 header .logo a:hover {
-  transition: 0.5s;
   color:rgb(180, 45, 88);
 }
 
@@ -67,10 +68,10 @@ header .compartilhe a, .login a {
   cursor: pointer;
   text-decoration: none;
   color: rgb(145, 139, 139);
+  transition: 0.5s;
 }
 
 header .header_main a:hover{
-  transition: 0.5s;
   color: black;
 }
 
